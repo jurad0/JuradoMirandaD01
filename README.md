@@ -1,4 +1,4 @@
-# README de la aplicación Flutter Ejercicio02
+# README de la aplicación Flutter Ejercicio01 y Ejercicio02
 
 ## Versión
 
