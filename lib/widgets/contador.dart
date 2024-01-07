@@ -1,8 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Contador extends StatelessWidget {
-  const Contador({super.key});
+class Contador extends StatefulWidget {
+  const Contador({Key? key}) : super(key: key);
+
+  @override
+  _ContadorState createState() => _ContadorState();
+}
+
+class _ContadorState extends State<Contador> {
+  int _contador = 13;
+
+  void _incrementar() {
+    setState(() {
+      _contador++;
+    });
+  }
+
+  void _reset() {
+    setState(() {
+      _contador = 13;
+    });
+  }
+
+  void _decrementar() {
+    setState(() {
+      _contador--;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +38,14 @@ class Contador extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "13",
+            _contador.toString(),
             textAlign: TextAlign.start,
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                  fontSize: 330,
-                  fontWeight: FontWeight.w100,
-                  color: Colors.white),
+                fontSize: 330,
+                fontWeight: FontWeight.w100,
+                color: Colors.white,
+              ),
             ),
           ),
           Padding(
@@ -31,10 +57,10 @@ class Contador extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: _incrementar,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromARGB(255, 144, 205, 255),
-                      foregroundColor: (Color.fromARGB(255, 255, 255, 255)),
+                      foregroundColor: Color.fromARGB(255, 255, 255, 255),
                       padding: EdgeInsets.all(20),
                       shape: CircleBorder(
                         side: BorderSide(
@@ -47,16 +73,17 @@ class Contador extends StatelessWidget {
                       "+1",
                       textAlign: TextAlign.start,
                       style: TextStyle(
-                          fontSize: 40,
-                          fontWeight: FontWeight.w100,
-                          color: Colors.white),
+                        fontSize: 40,
+                        fontWeight: FontWeight.w100,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: _reset,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromARGB(255, 144, 205, 255),
-                      foregroundColor: (Color.fromARGB(255, 255, 255, 255)),
+                      foregroundColor: Color.fromARGB(255, 255, 255, 255),
                       padding: EdgeInsets.all(25),
                       shape: CircleBorder(
                         side: BorderSide(
@@ -68,10 +95,10 @@ class Contador extends StatelessWidget {
                     child: Icon(Icons.refresh),
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: _decrementar,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromARGB(255, 144, 205, 255),
-                      foregroundColor: (Color.fromARGB(255, 255, 255, 255)),
+                      foregroundColor: Color.fromARGB(255, 255, 255, 255),
                       padding: EdgeInsets.all(20),
                       shape: CircleBorder(
                         side: BorderSide(
@@ -84,9 +111,10 @@ class Contador extends StatelessWidget {
                       "-1",
                       textAlign: TextAlign.start,
                       style: TextStyle(
-                          fontSize: 40,
-                          fontWeight: FontWeight.w100,
-                          color: Colors.white),
+                        fontSize: 40,
+                        fontWeight: FontWeight.w100,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],
