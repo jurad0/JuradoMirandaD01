@@ -7,12 +7,12 @@ class Content extends StatelessWidget {
   const Content({super.key});
 
   @override
-  Widget build(BuildContext body) {
+  Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(children: [
         const Nav(),
-        Container(
-          height: MediaQuery.of(body).size.height - 112,
+        SizedBox(
+          height: MediaQuery.of(context).size.height - 112,
           child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -22,9 +22,9 @@ class Content extends StatelessWidget {
               ]),
         ),
         Container(
-          height: MediaQuery.of(body).size.height,
-          width: MediaQuery.of(body).size.width,
-          color: Color.fromARGB(255, 111, 190, 254),
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          color: const Color.fromARGB(255, 111, 190, 254),
           child: const Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,

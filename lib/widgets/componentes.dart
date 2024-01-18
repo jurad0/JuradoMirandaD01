@@ -6,25 +6,25 @@ class Componente1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 550,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsets.only(bottom: 12.0),
+            padding: const EdgeInsets.only(bottom: 12.0),
             child: Text(
               "APRENDE A CREAR WEBS CON FLUTTER",
               textAlign: TextAlign.start,
               style: GoogleFonts.poppins(
-                textStyle: TextStyle(
+                textStyle: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 50,
                 ),
               ),
             ),
           ),
-          Text(
+          const Text(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
             textAlign: TextAlign.start,
             style: TextStyle(fontSize: 30),
@@ -43,7 +43,7 @@ class Componente2 extends StatelessWidget {
     return TextButton(
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all<Color>(
-            Color.fromARGB(255, 111, 190, 254)),
+            const Color.fromARGB(255, 111, 190, 254)),
         foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
         shape: MaterialStateProperty.all<OutlinedBorder>(
           RoundedRectangleBorder(
@@ -62,7 +62,7 @@ class Componente2 extends StatelessWidget {
         child: Text(
           'Contador',
           style: GoogleFonts.poppins(
-            textStyle: TextStyle(
+            textStyle: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 26,
             ),
